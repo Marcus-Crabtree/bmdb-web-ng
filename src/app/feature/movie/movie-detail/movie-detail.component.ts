@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/movie.class';
 import { MovieService } from 'src/app/service/movie.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { JSDocTagName } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-movie-detail',
@@ -29,6 +30,16 @@ export class MovieDetailComponent implements OnInit {
 
   }
   delete() {
-    
+    this.movieSvc.delete(this.movieId).subscribe(
+      jr => {
+        if(jr.errors ==null) {
+        console.log(jr.data);
+        this,this.router.navigateByUrl("/movie/list");
+      }
+      else {
+        console.log("**** Error deleting movie!: ", this.movieId,jr.errors);
+      }
+      });
+
   }
 }
