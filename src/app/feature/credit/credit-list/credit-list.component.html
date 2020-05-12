@@ -3,18 +3,18 @@
 <table *ngIf="credits" class='table table-sm table-striped'>
     <thead>
         <tr>
-            <th>ID</th>
             <th>Actor Name</th>
             <th>Movie Name</th>
             <th>Role</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let credit of credits">
-            <td>{{credit.id}}</td>
             <td>{{credit.actor.firstName}} {{credit.actor.lastName}}</td>
             <td>{{credit.movie.title}}</td>
             <td>{{credit.role}}</td>
+            <td> D | E</td>
         </tr>
     </tbody>
 </table>

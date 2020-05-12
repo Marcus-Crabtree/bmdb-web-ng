@@ -3,20 +3,20 @@
 <table *ngIf="actors" class='table table-sm table-striped'>
     <thead>
         <tr>
-            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Gender</th>
             <th>Birthdate</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let actor of actors">
-            <td>{{actor.id}}</td>
             <td>{{actor.firstName}}</td>
             <td>{{actor.lastName}}</td>
             <td>{{actor.gender}}</td>
             <td>{{actor.birthdate}}</td>
+            <td> D | E</td>
         </tr>
     </tbody>
 </table>
