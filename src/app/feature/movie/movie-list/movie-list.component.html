@@ -1,22 +1,24 @@
-<span class='component-title'>[{{ title }}]</span>
-<span>+</span>
+<section class="Heading">
+    <span class="page-title font-weight-bold font-italic">[{{ title }}]</span>
+    <a routerLink='/movie/create'>
+            <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+        </a>
+</section>
 <table *ngIf="movies" class='table table-sm table-striped'>
     <thead>
         <tr>
             <th>Title</th>
-            <th>Rating</th>
             <th>Year</th>
-            <th>Director</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let movie of movies">
             <td>{{movie.title}}</td>
-            <td>{{movie.rating}}</td>
             <td>{{movie.year}}</td>
-            <td>{{movie.director}}</td>
-            <td> D | E</td>
+            <td>
+                <a routerLink='/movie/detail/{{movie.id}}'>Detail</a> |
+                <a routerLink='/movie/edit/{{movie.id}}'>Edit</a></td>
         </tr>
     </tbody>
 </table>
