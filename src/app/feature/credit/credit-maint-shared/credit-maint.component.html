@@ -1,0 +1,43 @@
+<span class='component-title'>[{{title}}]</span>
+<p *ngIf='!credit'>Loading...</p>
+<div *ngIf='credit'>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input [(ngModel)]="credit.actor.firstName" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name:
+                </td>
+                <td>
+                    <input [(ngModel)]="credit.actor.lastName" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Movie:
+                </td>
+                <td>
+                    <input [(ngModel)]="credit.movie.title" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Role:
+                </td>
+                <td>
+                    <input [(ngModel)]="credit.role" class="rounded" type="text">
+                </td>
+            </tr>
+        </table>
+    </main>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+    <!-- <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span> -->
+
+</div>
