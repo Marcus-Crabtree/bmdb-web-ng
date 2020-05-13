@@ -26,6 +26,32 @@
                 <td><input [(ngModel)]="actor.birthdate" class="rounded" type="text" disabled></td>
             </tr>
         </table>
+        <<section class="heading">
+            <span class="page-title font-weight-bold font-italic">[Filmography]</span>
+        </section>
+        <table *ngIf="credits" class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Movie</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let credit of credits">
+                    <td>{{ credit.id }}</td>
+                    <td>
+                           {{ credit.actor.firstName }}&nbsp;{{ credit.actor.lastName }}
+                    </td>
+                    <td>
+                        <span>
+                            <a routerLink="/movie/detail/{{credit.movie.id}}">{{ credit.movie.title }} </a>
+                        </span>
+                    </td>
+                    <td>{{ credit.role }}</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <span>
         <span><a routerLink="/actor/edit/{{actor.id}}" class="btn btn-sm btn-warning">Edit</a></span>

@@ -18,19 +18,27 @@ export class CreditService {
 
   }
   get(id: number): Observable<JsonResponse> {
-    return this.http.get(url+id) as Observable<JsonResponse>;
+    return this.http.get(url + id) as Observable<JsonResponse>;
 
   }
   create(credit: Credit): Observable<JsonResponse> {
-    return this.http.post(url,credit) as Observable<JsonResponse>;
+    return this.http.post(url, credit) as Observable<JsonResponse>;
 
   }
   edit(credit: Credit): Observable<JsonResponse> {
-    return this.http.put(url,credit) as Observable<JsonResponse>;
+    return this.http.put(url, credit) as Observable<JsonResponse>;
 
   }
   delete(id: number): Observable<JsonResponse> {
-    return this.http.delete(url+id) as Observable<JsonResponse>;
+    return this.http.delete(url + id) as Observable<JsonResponse>;
+
+  }
+  getAllMoviesForActor(id: number): Observable<JsonResponse> {
+    return this.http.get(url+"/by-actor-id/"+id) as Observable<JsonResponse>;
+
+  }
+  getAllActorsForMovie(id: number): Observable<JsonResponse> {
+    return this.http.get(url+"/by-movie-id/"+id) as Observable<JsonResponse>;
 
   }
 }
