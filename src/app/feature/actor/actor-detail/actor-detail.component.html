@@ -40,9 +40,7 @@
             <tbody>
                 <tr *ngFor="let credit of credits">
                     <td>{{ credit.id }}</td>
-                    <td>
-                           {{ credit.actor.firstName }}&nbsp;{{ credit.actor.lastName }}
-                    </td>
+                    
                     <td>
                         <span>
                             <a routerLink="/movie/detail/{{credit.movie.id}}">{{ credit.movie.title }} </a>
